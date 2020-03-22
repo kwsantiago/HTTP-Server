@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <string.h>
@@ -24,6 +25,14 @@ int main(){
         perror("Bind failed\n");
         return 0;
     }
-
+    
+    if(listen(server_fd, 3) < 0){
+        perror("In listen\n");
+        exit(EXIT_FAILURE);
+    }
+    if((new_socket = accept(server_fd, (struct sockaddr*)&address, (socklen_t*)&addrlen)) < 0){
+        perror("In accept\n");
+        exit(EXIT_FAILURE);
+    }
     return 0;
 }
