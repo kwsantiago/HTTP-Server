@@ -3,3 +3,5 @@
 **Step 2:** Run the server by using ```./server```  
 **Step 3:** Press enter after seeing "Waiting for new Connection"  
 **Step 4:** Use your favorite browser and head over to http://localhost:8080/
+
+**Bonus:** You can run server in one terminal and client in another to test the implementation. 
