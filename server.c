@@ -29,7 +29,8 @@ int main(int argc, char const *argv[]){
     address.sin_port = htons(PORT);
 
     memset(address.sin_zero, '\0', sizeof address.sin_zero);
-
+    
+    // Forcing socket to port 8080
     if(bind(server_fd,(struct sockaddr *)&address,sizeof(address)) < 0){
         perror("In Bind\n");
         exit(EXIT_FAILURE);
